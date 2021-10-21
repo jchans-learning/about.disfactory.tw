@@ -36,14 +36,101 @@
         target="_blank"
         rel="noopener"
         >API</a
-      >。
+      >。<a class="contributor-list" @click.prevent="openModal">貢獻者名單</a>
     </p>
+    <transition name="modal">
+      <div v-if="showModal" class="modal-body">
+        <SvgClose class="modal-close" @click="closeModal" />
+        <div class="modal-content">
+          <div class="title">貢獻者</div>
+          <div class="introduction">
+            <p>Disfactory.tw 為農地違章工廠的舉報平台</p>
+            <p>
+              project is run by volunteers in the g0v.tw civic hacker network.
+            </p>
+            <p>Don't ask why nobody is doing this. <br />Become that nobody.</p>
+          </div>
+
+          <div class="list">
+            <div class="group">
+              <div class="group-name">前端</div>
+              <div class="group-member">
+                <p>IU、yukai、yeefun、dotsea、Caleb</p>
+              </div>
+            </div>
+            <div class="group">
+              <div class="group-name">設計</div>
+              <div class="group-member">
+                <p>SL、J、Tin、Lydia、Xinroo、RAY</p>
+              </div>
+            </div>
+            <div class="group">
+              <div class="group-name">後端</div>
+              <div class="group-member">
+                <p>cph、yellowsoar、swind、小白、</p>
+                <p>Yen-Chia、sour、Jsaon、Toby、</p>
+                <p>Sonia、Andy、Hubert、Darren、</p>
+                <p>Looofy、Simon、Aaron</p>
+              </div>
+            </div>
+            <div class="group">
+              <div class="group-name">圖資/GIS</div>
+              <div class="group-member">
+                <p>chewei、ronnywang、bdon、pm5、</p>
+                <p>kiang、shupo</p>
+              </div>
+            </div>
+            <div class="group">
+              <div class="group-name">地球公民基金會</div>
+              <div class="group-member">
+                <p>小海、deeper、小胖、沅諭、可飛、peii</p>
+              </div>
+            </div>
+            <div class="group">
+              <div class="group-name">社群協力</div>
+              <div class="group-member">
+                <p>ddio、chiahe、Joycelin、laiTzan、</p>
+                <p>chelin、jenhaoyang、chihao、Angel、</p>
+                <p>安東尼、Bryce、笑笑、積丹尼、誠夏、</p>
+                <p>昱伶、Stasia、慈忻、Kai、昱伶、Tai、</p>
+                <p>Wuulong、Carmen、fly、土撥鼠、</p>
+                <p>mhshih、JinWen、Johnson、</p>
+                <p>John Huang、zyan</p>
+              </div>
+            </div>
+          </div>
+          <p class="thanks">謝謝！</p>
+        </div>
+      </div>
+    </transition>
   </footer>
 </template>
 
 <script>
+import SvgClose from '~/assets/imgs/close-cross.svg?inline'
+
 export default {
   name: 'TheFooter',
+  components: {
+    SvgClose,
+  },
+  data() {
+    return {
+      showModal: false,
+    }
+  },
+  methods: {
+    //   when modal is opened, freeze scroll bar of the page
+    openModal() {
+      this.showModal = true
+      document.documentElement.style.overflow = 'hidden'
+    },
+    //   when modal is closed, unfreeze scroll bar of the page
+    closeModal() {
+      this.showModal = false
+      document.documentElement.style.overflow = 'auto'
+    },
+  },
 }
 </script>
 
@@ -91,5 +178,102 @@ a {
   margin: 45px auto 0 auto;
   padding: 0 32px;
   max-width: 800px;
+  .contributor-list {
+    color: #5f5f5f;
+  }
+}
+
+.modal-body {
+  display: block;
+  position: fixed;
+  left: 50vw;
+  top: 70px;
+  z-index: 10;
+  transform: translate(-50%, 0%);
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  background-color: #fff;
+  border: 1px solid #888;
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+.modal-content {
+  text-align: center;
+  height: calc(100vh - 140px);
+  overflow-y: scroll;
+  width: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 16px;
+  .title {
+    font-size: 38px;
+    line-height: 55px;
+    padding-bottom: 37px;
+  }
+  .introduction {
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    line-height: 1.25;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #9d9d9d;
+    p {
+      margin: 0 0 16px 0;
+    }
+  }
+  .list {
+    padding: 30px 0 14px 0;
+    .group {
+      padding-bottom: 21px;
+      line-height: 1.5;
+      font-style: normal;
+      .group-name {
+        color: #107393;
+        font-weight: 500;
+      }
+      .group-member {
+        font-weight: 400;
+      }
+    }
+  }
+  .thanks {
+    font-weight: 500;
+    font-style: normal;
+    font-size: 26px;
+    line-height: 30px;
+    color: #2b4754;
+  }
+}
+
+.modal-close {
+  position: absolute;
+  right: 17px;
+  top: 17px;
+  rect {
+    fill: #979797;
+  }
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    cursor: pointer;
+    rect {
+      fill: #5f5f5f;
+    }
+  }
+}
+
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 1s;
+}
+.modal-enter,
+.modal-leave-to {
+  opacity: 0;
+}
+.modal-enter-to,
+.modal-leave {
+  opacity: 1;
 }
 </style>
