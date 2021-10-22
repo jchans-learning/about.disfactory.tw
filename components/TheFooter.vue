@@ -135,7 +135,6 @@ export default {
     openModal() {
       this.showModal = true
       document.documentElement.style.overflow = 'hidden'
-      console.log(document.documentElement.style)
     },
     //   when modal is closed, unfreeze scroll bar of the page
     closeModal() {
