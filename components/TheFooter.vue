@@ -47,7 +47,7 @@
             <div class="introduction">
               <p class="thanks">謝謝！</p>
               <div>
-                <p>Disfactory.tw 為農地違章工廠的舉報平台</p>
+                <p>Disfactory.tw 為農地違章工廠的回報平台</p>
                 <p>
                   project is run by volunteers in the g0v.tw civic hacker
                   network.
