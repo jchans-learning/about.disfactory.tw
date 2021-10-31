@@ -102,7 +102,7 @@
                 <div class="group-name">社群協力</div>
                 <div class="group-member">
                   <p>
-                    ddio、chiahe、Joycelin、laiTzan、chelin、jenhaoyang、chihao、Angel、安東尼、Bryce、笑笑、積丹尼、誠夏、昱伶、Stasia、慈忻、Kai、昱伶、Tai、Wuulong、Carmen、fly、土撥鼠、mhshih、JinWen、Johnson、John
+                    ddio、chiahe、Joycelin、laiTzan、chelin、jenhaoyang、chihao、Angel、安東尼、Bryce、笑笑、積丹尼、誠夏、Stasia、慈忻、Kai、昱伶、Tai、Wuulong、Carmen、fly、土撥鼠、mhshih、JinWen、Johnson、John
                     Huang、zyan
                   </p>
                 </div>
@@ -290,7 +290,7 @@ a {
       }
       .group-member {
         font-weight: 400;
-        word-break: keep-all;
+        overflow-wrap: break-word;
       }
       @include media-breakpoint-up(lg) {
         display: flex;
