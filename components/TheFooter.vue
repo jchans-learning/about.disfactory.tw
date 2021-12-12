@@ -75,7 +75,7 @@
                 <div class="group-name">後端</div>
                 <div class="group-member">
                   <p>
-                    cph、yellowsoar、swind、小白、Yen-Chia、sour、Jsaon、Toby、
+                    cph、yellowsoar、swind、小白、YAlgorithm、sour、Jsaon、Toby、
                     Sonia、Andy、Hubert、Darren、Looofy、Simon、Aaron
                   </p>
                 </div>
@@ -103,7 +103,7 @@
                 <div class="group-member">
                   <p>
                     ddio、chiahe、Joycelin、laiTzan、chelin、jenhaoyang、chihao、Angel、安東尼、Bryce、笑笑、積丹尼、誠夏、Stasia、慈忻、Kai、昱伶、Tai、Wuulong、Carmen、fly、土撥鼠、mhshih、JinWen、Johnson、John
-                    Huang、zyan
+                    Huang、zyan、tai、slayer、mg、robin
                   </p>
                 </div>
               </div>
